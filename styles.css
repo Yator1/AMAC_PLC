@@ -59,6 +59,17 @@ nav ul li .active {
     background-color: #2ea901;
 }
 
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
 .article {
     width: 50%;
     margin: auto;

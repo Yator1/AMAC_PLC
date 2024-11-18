@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="icon" href="/uploads/icon_1.png" type="image/png">
     <link rel="stylesheet" href="/styles.css">
     <title>AMAC</title>
 </head>
 <body>
     
-    <section class="section_home">
-        <div class="container">
+    <section class="section_home" id="home">
             <nav>
-                <h1 class="logo">AMAC</h1>
+                <h1 class="logo">
+                  <img src="/uploads/logo_2.png" alt="AMAC">
+                </h1>
                 <ul>
-                    <li><a href="" class="active">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Partners</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="" class="btn">Get Started</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn">Get Started</a></li>
                 </ul>
             </nav>
             <div class="article">
                 <h1>AMAC PLC</h1>
                 <p>Farm to market</p>                
-            </div> 
-        </div>          
+            </div>     
     </section>
-    <section class="section-about">
+    <section class="section-about" id="about-us">
         <div class="container">
             <h1>About Us</h1>
             <p>At AMAC (Africa Mega Agri Corp PLC), we revolutionize agriculture by providing tailored solutions to farmers, enhancing productivity, and ensuring food security.</p>
@@ -104,13 +106,13 @@
     </section>
     <section id="contact" class="contact">
         <h2>Contact Info</h2>
-        <p>Phone: +254 715 686 967</p>
-        <p>Email: info@amacfoods.co.ke</p>
+        <a href="tel:+254715686967">Call Us: +254 715 686 967</a><br>
+        <a href="mailto:info@amacplc.com">Email Us: info@amacplc.com</a>
         <p>Address: Westport Industrial City, Po Box 1838-00100</p>
-        <form>
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
+        <form action="/submit.php" method="POST">
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <textarea placeholder="Message" required name="message"></textarea>
             <button type="submit">Submit</button>
         </form>
     </section>
