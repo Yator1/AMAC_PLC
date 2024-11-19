@@ -1,125 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- favicon -->
-    <link rel="icon" href="/uploads/icon_1.png" type="image/png">
-    <link rel="stylesheet" href="/styles.css">
-    <title>AMAC</title>
-</head>
-<body>
-    
-    <section class="section_home" id="home">
-            <nav>
-                <div class="logo">
-                  <img src="/uploads/logo_2.png" alt="AMAC">
-                </div>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#partners">Partners</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn">Get Started</a></li>
-                </ul>
-            </nav>
-            <div class="article">
-                <h1>AMAC PLC</h1>
-                <p>Farm to market</p>                
-            </div>     
-    </section>
-    <section class="section-about" id="about-us">
-        <div class="container">
-            <h1>About Us</h1>
-            <p>At AMAC (Africa Mega Agri Corp PLC), we revolutionize agriculture by providing tailored solutions to farmers, enhancing productivity, and ensuring food security.</p>
-            <p>We are committed to sustainability, innovation, and empowering local farmers to thrive in global markets.</p>
-        </div>
-    </section>
-    <section id="products" class="products">
-        <h2>Our Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="/uploads/coffee.jpg" alt="Coffee">
-                <h3>Coffee</h3>
-                <p>Rich and aromatic coffee sourced from the finest farms.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/tea.jpg" alt="Tea">
-                <h3>Tea</h3>
-                <p>Premium tea leaves for a refreshing experience.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/avocado.jpg" alt="Avocado">
-                <h3>Avocado</h3>
-                <p>Fresh, creamy avocados rich in nutrients.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/mango.jpg" alt="Mango">
-                <h3>Mango</h3>
-                <p>Sweet and juicy mangoes straight from our orchards.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/herbs.jpg" alt="Herbs">
-                <h3>Herbs</h3>
-                <p>Aromatic herbs to enhance your culinary creations.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/chillies.jpg" alt="Chillies">
-                <h3>Chillies</h3>
-                <p>Spicy chillies to add a kick to your dishes.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/flowers.jpg" alt="Flowers">
-                <h3>Flowers</h3>
-                <p>Beautiful flowers to brighten your day.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/meats.jpg" alt="meat">
-                <h3>Meat</h3>
-                <p>High-quality, sustainably sourced meat to meet your protein needs.</p>
-            </div>
-            <div class="product-card">
-                <img src="/uploads/fish.jpg" alt="fish">
-                <h3>Fish</h3>
-                <p>Fresh and nutritious fish, straight from local waters to your table.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="partners" class="partners">
-        <h2>Our Partners</h2>
-        <div class="partner-grid">
-            <div class="partner-card">
-                <h3>KTDA (Kenya Tea Development Agency)</h3>
-                <p>Collaborating to enhance tea production and market access.</p>
-            </div>
-            <div class="partner-card">
-                <h3>Kenya Nut</h3>
-                <p>Supporting sustainable nut cultivation and exports.</p>
-            </div>
-            <div class="partner-card">
-                <h3>KCC (Kenya Cooperative Creameries)</h3>
-                <p>Improving milk production, processing, and distribution.</p>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="contact">
-        <h2>Contact Info</h2>
-        <a href="tel:+254715686967">Call Us: +254 715 686 967</a><br>
-        <a href="mailto:info@amacplc.com">Email Us: info@amacplc.com</a>
-        <p>Address: Westport Industrial City, Po Box 1838-00100</p>
-        <form action="/submit.php" method="POST">
-            <input type="text" placeholder="Name" name="name" required>
-            <input type="email" placeholder="Email" name="email" required>
-            <textarea placeholder="Message" required name="message"></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
 
-    <footer>
-        <p>&copy; 2024 AMAC Foods. All rights reserved.</p>
-    </footer>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="/uploads/icon_1.png" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+  <title>AMAC</title>
+</head>
+
+<body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+
+        // Prevent scrolling when menu is open
+        if (navLinks.classList.contains('active')) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  </script>
+
+  <section class="section_home" id="home">
+    <nav>
+      <div class="logo">
+        <img src="/uploads/logo_2.png" alt="AMAC">
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" class="btn">Get Started</a></li>
+      </ul>
+    </nav>
+    <div class="article">
+      <h1>AMAC PLC</h1>
+      <p>Farm to market</p>
+    </div>
+  </section>
+  <section class="section-about" id="about-us">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>At AMAC (Africa Mega Agri Corp PLC), we revolutionize agriculture by providing tailored solutions to farmers,
+        enhancing productivity, and ensuring food security.</p>
+      <p>We are committed to sustainability, innovation, and empowering local farmers to thrive in global markets.</p>
+    </div>
+  </section>
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="/uploads/coffee.jpg" alt="Coffee">
+        <h3>Coffee</h3>
+        <p>Rich and aromatic coffee sourced from the finest farms.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/tea.jpg" alt="Tea">
+        <h3>Tea</h3>
+        <p>Premium tea leaves for a refreshing experience.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/avocado.jpg" alt="Avocado">
+        <h3>Avocado</h3>
+        <p>Fresh, creamy avocados rich in nutrients.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/mango.jpg" alt="Mango">
+        <h3>Mango</h3>
+        <p>Sweet and juicy mangoes straight from our orchards.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/herbs.jpg" alt="Herbs">
+        <h3>Herbs</h3>
+        <p>Aromatic herbs to enhance your culinary creations.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/chillies.jpg" alt="Chillies">
+        <h3>Chillies</h3>
+        <p>Spicy chillies to add a kick to your dishes.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/flowers.jpg" alt="Flowers">
+        <h3>Flowers</h3>
+        <p>Beautiful flowers to brighten your day.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/meats.jpg" alt="meat">
+        <h3>Meat</h3>
+        <p>High-quality, sustainably sourced meat to meet your protein needs.</p>
+      </div>
+      <div class="product-card">
+        <img src="/uploads/fish.jpg" alt="fish">
+        <h3>Fish</h3>
+        <p>Fresh and nutritious fish, straight from local waters to your table.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" class="partners">
+    <h2>Our Partners</h2>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <h3>KTDA (Kenya Tea Development Agency)</h3>
+        <p>Collaborating to enhance tea production and market access.</p>
+      </div>
+      <div class="partner-card">
+        <h3>Kenya Nut</h3>
+        <p>Supporting sustainable nut cultivation and exports.</p>
+      </div>
+      <div class="partner-card">
+        <h3>KCC (Kenya Cooperative Creameries)</h3>
+        <p>Improving milk production, processing, and distribution.</p>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <h2>Contact Info</h2>
+    <a href="tel:+254715686967">Call Us: +254 715 686 967</a><br>
+    <a href="mailto:info@amacplc.com">Email Us: info@amacplc.com</a>
+    <p>Address: Westport Industrial City, Po Box 1838-00100</p>
+    <form action="/submit.php" method="POST">
+      <input type="text" placeholder="Name" name="name" required>
+      <input type="email" placeholder="Email" name="email" required>
+      <textarea placeholder="Message" required name="message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 AMAC Foods. All rights reserved.</p>
+  </footer>
 
 </body>
+
 </html>
