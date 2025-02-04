@@ -8,37 +8,11 @@
   <link rel="icon" href="/uploads/icon_1.png" type="image/png">
   <link rel="stylesheet" href="/styles.css">
   <title>AMAC</title>
+  <scriptreferrerpolicy=origin src=https://ir.nse.co.ke/jst/AMACPLC>
+    </script>
 </head>
 
 <body>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-
-        // Prevent scrolling when menu is open
-        if (navLinks.classList.contains('active')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'auto';
-        }
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-          navLinks.classList.remove('active');
-          hamburger.classList.remove('active');
-          document.body.style.overflow = 'auto';
-        }
-      });
-    });
-  </script>
-
   <section class="section_home" id="home">
     <nav>
       <div class="logo">
@@ -122,6 +96,17 @@
     </div>
   </section>
 
+  <!--# Start of NSEIR ticker code -->
+  <div id="msl-ir-ticker">
+    <div id="fountainG">
+      <div class="fountainG_1 fountainG">&nbsp;Hello</div>
+      <div class="fountainG_2 fountainG">&nbsp;</div>
+      <div class="fountainG_3 fountainG">&nbsp;</div>
+      <div class="fountainG_4 fountainG">&nbsp;</div>
+    </div>
+  </div>
+  <!--# End of NSE IR ticker code -->
+
   <section id="partners" class="partners">
     <h2>Our Partners</h2>
     <div class="partner-grid">
@@ -157,5 +142,32 @@
   </footer>
 
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+
+      // Prevent scrolling when menu is open
+      if (navLinks.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
+</script>
 
 </html>
