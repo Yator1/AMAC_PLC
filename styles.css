@@ -16,6 +16,10 @@ body {
   overflow-x: auto; /* Allow horizontal scrolling for smaller screens */
 }
 
+section {
+  padding: 80px 0;
+}
+
 /* Section Home */
 .section_home {
   min-height: 100vh;
@@ -28,8 +32,10 @@ body {
 
 /* Container */
 .container {
+  max-width: 1200px;
   width: 85%;
   margin: auto;
+  padding: 0 20px;
 }
 
 /* Navigation Bar */
@@ -38,20 +44,20 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 4rem;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 50px;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logo img {
-  height: 60px;
+  height: 70px;
   width: auto;
-  display: block;
+  /* display: block; */
 }
 
 nav ul {
@@ -59,6 +65,7 @@ nav ul {
   display: flex;
   gap: 20px;
   align-items: center;
+  padding-right: 70px;
 }
 
 nav ul li {
@@ -69,8 +76,10 @@ nav ul li a {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px 5px;
+  border-radius: 1px;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover,
@@ -202,11 +211,6 @@ nav ul li .active {
   margin-bottom: 0;
 }
 
-.section-about p:hover {
-  color: #2ea901;
-  transition: color 0.3s ease;
-}
-
 /* Products Section */
 .products {
   padding: 80px 0;
@@ -221,10 +225,10 @@ nav ul li .active {
 }
 
 .product-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Keeps it responsive */
+  /* gap: px; */
+  padding: 0 80px; /* Adds space on both sides */
 }
 
 .product-card {
@@ -235,6 +239,7 @@ nav ul li .active {
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s ease;
+  margin: 1px;
 }
 
 .product-card img {
@@ -395,3 +400,103 @@ footer {
   text-align: center;
   font-size: 14px;
 }
+
+
+/* Blog-style News Section */
+.news {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.news h2 {
+  font-size: 36px;
+  color: #2ea901;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Blog Article Styling */
+.news-article {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.news-article h1 {
+  font-size: 28px;
+  color: #2ea901;
+  margin-bottom: 15px;
+}
+
+.news-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.news-article p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.news-article blockquote {
+  font-size: 20px;
+  font-style: italic;
+  border-left: 5px solid #2ea901;
+  padding-left: 15px;
+  margin: 20px 0;
+  color: #333;
+}
+
+/* News Image Styling */
+.news-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Call-to-Action for Subscription */
+.news-cta {
+  font-size: 18px;
+  font-weight: bold;
+  background: #2ea901;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.news-cta a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.news-cta:hover {
+  background: #248e01;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .news-article {
+    padding: 20px;
+  }
+
+  .news-article h1 {
+    font-size: 24px;
+  }
+
+  .news-article p {
+    font-size: 16px;
+  }
+}
+
